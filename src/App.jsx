@@ -1,28 +1,49 @@
-import { useState } from 'react'
+import React from 'react'
+import CosmicBackground from './components/CosmicBackground'
+import DigitalGlobe from './components/DigitalGlobe'
+import AIConnections from './components/AIConnections'
+import EthicalFigure from './components/EthicalFigure'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
+    <div className="min-h-screen relative text-white font-[Inter]">
+      {/* Background cosmos */}
+      <CosmicBackground />
+
+      {/* Foreground content */}
+      <div className="relative z-10 flex flex-col">
+        {/* Header */}
+        <header className="w-full px-6 pt-8 md:pt-10 flex items-center justify-between">
+          <h1 className="text-xl md:text-2xl font-semibold tracking-tight">
+            <span className="text-emerald-300">Anna</span>
+            <span className="text-white/90"> Corps</span>
+          </h1>
+          <span className="text-xs md:text-sm text-white/70">Global Halal AI Empire</span>
+        </header>
+
+        {/* Hero Globe with Patterns */}
+        <section className="mt-4 md:mt-2">
+          <DigitalGlobe />
+        </section>
+
+        {/* AI Agent Nodes */}
+        <section className="mt-2 md:-mt-2">
+          <AIConnections />
+        </section>
+
+        {/* Ethical Figure with Sprout */}
+        <section className="mt-2 md:mt-4">
+          <EthicalFigure />
+        </section>
+
+        {/* Footer */}
+        <footer className="px-6 pb-10 text-center text-white/60 text-xs">
+          Sapphire blue, gold, white, and emerald green — crafted for barakah and balance
+        </footer>
       </div>
+
+      {/* Subtle top gradient overlay to add cinematic depth without blocking interactions */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#07122c]/60 via-transparent to-transparent" />
     </div>
   )
 }
-
-export default App
